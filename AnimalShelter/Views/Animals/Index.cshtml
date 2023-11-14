@@ -4,13 +4,55 @@
 
 @using AnimalShelter.Models;
 
-<h1>Animals</h1>
 
-<ul>
+
+<div class = "container-fluid">
+  <h1>Animals</h1>
+  <div class = "row">
+    <div class = "col">
+      <h4>Name</h4>
+    </div>
+    <div class = "col">
+      <h4>Breed</h4>
+    </div>
+    <div class = "col">
+      <h4>Type</h4>
+    </div>
+    <div class = "col">
+      <h4>Admittance Date</h4>
+    </div>
+  </div>
   @foreach(Animal animal in Model)
   {
-    <li>@Html.ActionLink($"{animal.Name} - {animal.AdmittanceDate}", "Details", new {id = animal.AnimalId})</li>
+    <div class = "row">
+      <div class = "col">
+        @animal.Name
+      </div>
+      <div class = "col">
+        @animal.Breed
+      </div>
+      <div class = "col">
+        @animal.Type
+      </div>
+      <div class = "col">
+        @animal.AdmittanceDate.ToString().Replace(" 12:00:00 AM", "")
+      </div>
+    </div>
   }
-</ul>
+  <br>
+  @Html.ActionLink("Sort by breed", "Index", "Animals", new {sortOrder = "breed"}, null)
+  <br>
+  @Html.ActionLink("Sort by type", "Index", "Animals", new {sortOrder = "type"}, null)
+  <br>
+  @Html.ActionLink("Sort by admittance date", "Index", "Animals")
+  <br>
+  @Html.ActionLink("Add new animal", "Create")
+</div>
 
-<p>@Html.ActionLink("Add new animal", "Create")</p>
+@* <ul>
+
+  @foreach(Animal animal in Model)
+  {
+    <li>@Html.ActionLink($"{animal.Name}, {animal.Breed}, {animal.Type} - {animal.AdmittanceDate.ToString().Replace(" 12:00:00 AM", "")}", "Details", new {id = animal.AnimalId})</li>
+  }
+</ul> *@

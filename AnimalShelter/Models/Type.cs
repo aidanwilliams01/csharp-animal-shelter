@@ -1,3 +1,5 @@
+// add types to use in animal creation? (radio buttons, dropdown)
+
 // using System.Collections.Generic;
 // using System.Data.Common;
 // using System.Runtime.InteropServices;
