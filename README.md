@@ -1,6 +1,4 @@
-# (Application Name)
-
-#### (Brief description of application)
+# Animal Shelter
 
 #### By Aidan Williams
 
@@ -11,6 +9,8 @@
 * _MSTest_
 
 ## Description
+
+An animal tracker for a shelter. Allows users to sort animals by type, breed, or admittance date.
 
 ## Setup Instructions
 
