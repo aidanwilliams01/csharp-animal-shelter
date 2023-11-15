@@ -19,11 +19,11 @@ namespace AnimalShelter.Controllers
       List<Animal> model = new List<Animal>();
       if (sortOrder == "breed")
       {
-        model = _db.Animals.OrderBy(x => x.Breed).ToList();
+        model = _db.Animals.OrderBy(x => x.Breed).ThenBy(x => x.AdmittanceDate).ToList();
       }
       else if (sortOrder == "type")
       {
-        model = _db.Animals.OrderBy(x => x.Type).ToList();
+        model = _db.Animals.OrderBy(x => x.Type).ThenBy(x => x.AdmittanceDate).ToList();
       }
       else
       {
